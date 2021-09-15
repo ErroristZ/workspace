@@ -1,7 +1,8 @@
-
+    ```
 $ cp env.sample .env                                # 复制环境变量文件
 $ cp docker-compose.sample.yml docker-compose.yml   # 复制 docker-compose 配置文件。默认启动3个服务：
 $ docker-compose up                                 # 启动
+    ```
 
 ### 3.3 快速安装php扩展
 1.进入容器:
