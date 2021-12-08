@@ -4,6 +4,21 @@
 	$ docker-compose up                                 # 启动
 ```
 
+### 3.2 安装PHP扩展
+PHP的很多功能都是通过扩展实现，而安装扩展是一个略费时间的过程，
+所以，除PHP内置扩展外，在`env.sample`文件中我们仅默认安装少量扩展，
+如果要安装更多扩展，请打开你的`.env`文件修改如下的PHP配置，
+增加需要的PHP扩展：
+```bash
+PHP_EXTENSIONS=pdo_mysql,opcache,redis       # PHP 要安装的扩展列表，英文逗号隔开
+PHP54_EXTENSIONS=opcache,redis                 # PHP 5.4要安装的扩展列表，英文逗号隔开
+```
+然后重新build PHP镜像。
+```bash
+docker-compose build php
+```
+可用的扩展请看同文件的`env.sample`注释块说明。
+
 ### 3.3 快速安装php扩展
 1.进入容器:
 
